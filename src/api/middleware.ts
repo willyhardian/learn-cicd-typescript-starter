@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import { respondWithError } from "./json.js";
 import { getUser } from "../db/queries/users.js";
-import { User } from "../db/schema.js";
+import type { User } from "../db/schema.js";
 import { getAPIKey } from "./auth.js";
 
 export function middlewareAuth(

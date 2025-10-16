@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import { v4 as uuidv4 } from "uuid";
 import { respondWithError, respondWithJSON } from "./json.js";
 import { createNote, getNote, getNotesForUser } from "../db/queries/notes.js";
-import { User } from "../db/schema.js";
+import type { User } from "../db/schema.js";
 
 export async function handlerNotesGet(req: Request, res: Response, user: User) {
   try {
