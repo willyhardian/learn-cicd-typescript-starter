@@ -38,4 +38,4 @@ jobs:
         run: "gcloud builds submit --tag asia-southeast2-docker.pkg.dev/gen-lang-client-0318560153/notely-ar-repo/notely:latest ."
 
       - name: Deploy to Cloud Run
-        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/gen-lang-client-0318560153/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project gen-lang-client-031856015 --max-instances=4
+        run: gcloud run deploy notely --image asia-southeast2-docker.pkg.dev/gen-lang-client-0318560153/notely-ar-repo/notely:latest --region asia-southeast2 --allow-unauthenticated --project gen-lang-client-0318560153 --max-instances=4
