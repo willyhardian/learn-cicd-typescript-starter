@@ -21,6 +21,6 @@ export const config: Config = {
     filepathRoot: "./src/assets",
   },
   db: {
-    url: process.env.DATABASE_URL,
+    url: "libsql://notely-db-willyhardian.aws-ap-northeast-1.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjEyMjIxNjgsImlkIjoiYWMzYjVlMDctZTdmYi00NjQ3LWFjM2EtM2RlZGJhYmFjMGEwIiwicmlkIjoiMTZjYWI3NWItZjgxYy00Y2ZlLTk0YmMtMDY3ZmZmNWY3YzI1In0.G0S33-hPEouvSIH7lxPO_af5FOEWR0QTXC7lTd_m4PD1jqPSgUtD1peoLUzlYvch2nwiBUv6rMtoTsx3zZ0BDg",
   },
 };
