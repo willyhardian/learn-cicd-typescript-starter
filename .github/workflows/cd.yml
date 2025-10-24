@@ -9,6 +9,9 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -36,6 +39,9 @@ jobs:
 
       - name: Gcloud builds submit
         run: "gcloud builds submit --tag asia-southeast2-docker.pkg.dev/gen-lang-client-0318560153/notely-ar-repo/notely:latest ."
+
+      - name: Run migration
+        run: "npx drizzle-kit migrate --config=drizzle.config.ts"
 
       - name: Deploy to Cloud Run
         run: gcloud run deploy notely --image asia-southeast2-docker.pkg.dev/gen-lang-client-0318560153/notely-ar-repo/notely:latest --region asia-southeast2 --allow-unauthenticated --project gen-lang-client-0318560153 --max-instances=4
